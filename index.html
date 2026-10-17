@@ -170,7 +170,7 @@ section{position:relative;z-index:1;padding:6rem 2rem;}
 /* FEATURE BENTO */
 .bento-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto;gap:1rem;margin-top:2.5rem;}
 @media(max-width:900px){.bento-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:500px){.bento-grid{grid-template-columns:1fr;}}
+@media(max-width:560px){.bento-grid{grid-template-columns:minmax(0,1fr);}.bento-card.span2{grid-column:auto;}}
 .bento-card{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);
   padding:1.8rem;position:relative;overflow:hidden;
   transition:all .4s cubic-bezier(.23,1,.32,1);cursor:default;}
