@@ -1,6 +1,7 @@
-'use strict';
+﻿'use strict';
 
 const express = require('express');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -22,7 +23,11 @@ let satusehatTokenCache = { token: null, expiresAt: 0 };
 
 app.use(express.json({ limit: '15mb' }));
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (_req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 function parseImageDataUrl(imageDataUrl) {
   if (typeof imageDataUrl !== 'string') return null;
@@ -278,3 +283,4 @@ app.listen(PORT, () => {
   console.log(`PillScan AI berjalan di http://localhost:${PORT}`);
   console.log(`Endpoint KFA: http://localhost:${PORT}/api/kfa/search?keyword=Paramex`);
 });
+
