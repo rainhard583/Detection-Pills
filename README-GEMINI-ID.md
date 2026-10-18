@@ -1,7 +1,7 @@
 # Integrasi Gemini untuk PillScan AI
 
 ## Fitur
-- YOLOv11/Roboflow tetap menjadi model deteksi kondisi fisik.
+- YOLO11n/Roboflow tetap menjadi model deteksi kondisi fisik.
 - Pada halaman `upload.html`, setelah deteksi YOLO, klik **Analisis dengan Gemini**.
 - Gemini menerima foto dan label prediksi YOLO, lalu memberi perkiraan identitas obat, kondisi visual, dan informasi dosis yang terbatas pada informasi yang bisa diverifikasi.
 - API key Gemini hanya disimpan di backend `.env`, bukan di browser.
